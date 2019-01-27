@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="col-md-6 col-md-offset-3">
+    <h1 class="text-center">Admin Login</h1>
+    <form (ngSubmit)="logConsole()">
+      <div class="form-group">
+        <label for="user">Username</label>
+        <input type="text" class="form-control" id="user"
+               required
+               [(ngModel)]="model.user" name="user"
+               #user="ngModel" [placeholder]="'JohnSmith123'">
+        <div [hidden]="user.valid || user.pristine"
+             class="alert alert-danger">
+          Username is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="pass">Password</label>
+        <input type="password" class="form-control" id="pass"
+               required
+               [(ngModel)]="model.pass" name="pass"
+               #pass="ngModel" [placeholder]="'••••••••'">
+        <div [hidden]="pass.valid || pass.pristine"
+             class="alert alert-danger">
+          Password is required
+        </div>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-success center-block">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
